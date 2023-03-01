@@ -18,16 +18,17 @@ body, html {
 .card {
     background-color: #fde8cd;
     padding: 20px;
-    width: fit-content;
     margin: auto;
     border-radius: 20px;
     box-shadow: 2px 2px 7px #0000005f;
     text-align: center;
+    width: 50vw;
+    min-height: 500px;
 }
 
 img {
-    max-height: 400px;
     border-radius: 5px;
+    width: 50vw;
 }
 
 #dia, #tarde, #noite {
