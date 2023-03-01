@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas do Dia</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+        
+            <h1>HORARIO!</h1>
+            <div id="mensagem">
+                
+            </div>
+            <img id="dia" src="images/dia.jpg" alt="noite">
+            <img id="tarde" src="images/tarde.jpg" alt="tarde">
+            <img id='noite' src="images/noite.png" alt="noite">
+        </div><!--card-->
+
+    </div><!--container-->
+
+    
+    <script>
+        var tempo = new Date()
+        var hora = tempo.getHours()
+        
+        var msg = document.querySelector('#mensagem')
+        var imagemDia = document.querySelector('#dia')
+        var imagemTarde = document.querySelector('#tarde')
+        var imagemNoite = document.querySelector('#noite')
+
+        msg.innerHTML = `<p>Agora são ${hora} : ${tempo.getMinutes()}</p>`
+
+        if (hora <= 12) {
+            imagemDia.style.display = 'block'
+            document.body.style.background = '#a6c0e0'
+            msg.innerHTML += `<p>BOM DIA!</p>`
+        } else if (hora <= 18) {
+            imagemTarde.style.display = 'block'
+            document.body.style.background = '#f79951'
+            msg.innerHTML += `<p>BOA TARDE!</p>`
+        } else { 
+            imagemNoite.style.display = 'block'
+            document.body.style.background = '#2a2846'
+            msg.innerHTML += `<p>BOA NOITE!</p>`
+        }
+                
+    </script>
+
+
+</body>
+</html>

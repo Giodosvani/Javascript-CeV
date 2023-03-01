@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Nacionalidade</title>
+    
+    <style>
+        * {
+            overflow: hidden;
+        }
+
+        body, html {
+            height: 110vh;
+            width: 100vw;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Trebuchet MS', sans-serif;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #ffe600, #ff0a0a);
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidades!</h1>
+
+    <p>Você é brasileiro ou estrangeiro?</p>
+
+    <input type="text" id="pais" placeholder='Nome do seu País'>
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="res">. . .</div>
+
+
+    <script>
+        function verificar() {
+            var pais = document.querySelector('#pais').value
+            var res = document.querySelector('#res')
+
+            if (pais == 'Brasil') {
+                res.innerHTML = `<p>Você é Brasileiro</p>`  
+                document.body.style.background = 'linear-gradient(to bottom, green, yellow)'
+            } else if (pais == '') {
+            alert('Insira o nome de um país.')    
+            } else {res.innerHTML = `<p>Você é Estrangeiro</p>`
+                document.body.style.background = 'linear-gradient(to bottom, #7990bd, #ac5c71)'
+            }
+
+        }
+    </script>
+
+</body>
+</html>

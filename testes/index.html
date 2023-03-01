@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br
+">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+
+
+    <style>
+        body {
+            background-color: rgb(49, 49, 49);
+            color: white;
+        }
+
+        #botao2 {
+            display: none
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Este é um título!</h1>
+    <p id="msg">Eu sou como uma mágica!!<p>
+    <button onclick="sai()" id="botao1">Saia da minha frente!</button>
+    <button onclick="volta()" id="botao2">Volte para mim!</button>
+
+
+    <script>
+        var msg = document.querySelector('#msg')
+        var btn1 = document.querySelector('#botao1')
+        var btn2 = document.querySelector('#botao2')
+
+
+        function sai() {
+            msg.style.display = 'none'
+            btn1.style.display = 'none'
+            btn2.style.display = 'block'
+        }
+
+        function volta() {
+            msg.style.display = 'block'
+            btn1.style.display = 'block'
+            btn2.style.display = 'none'
+        }
+    </script>
+
+</body>
+</html>
