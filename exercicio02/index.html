@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade!</title>
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+
+    <div class="container">
+        <p>Ano de Nascimento: <input type="number" name="txtnum" id="txtnum"></p>
+
+        <p>Sexo: 
+            <input type="radio" name="radio" id="radmas">
+            <label for="radmas">Masculino</label>
+
+            <input type="radio" name="radio" id="radfem">
+            <label for="radfem">Feminino</label>
+        </p>
+
+        <input type="button" value="Verificar" onclick="verificar()"> 
+
+        <div id="res">
+            <div id="msg">Preencha os dados para conferir o resultado!</div>
+        </div> <!--res-->
+        
+    </div> <!--container-->
+
+
+    <script>
+        var data = new Date()
+        var anoAtual = data.getFullYear()
+        var anoNascimento = document.querySelector('#txtnum')
+        var res = document.querySelector('#res')
+
+        var masc = document.querySelector('#radmas')
+        var fem = document.querySelector('#radfem')
+        
+
+        function verificar() {
+
+            var nascimento = anoNascimento.value
+            if (nascimento <= 1920) {
+                alert('[ERRO] Consulte os dados')
+                res.innerHTML = '<p>ERRO FATAL!</p><p>Se você acredita que isso não é um erro, entre em contato com o desenvolvedor'
+            } else if (nascimento <= 1980 && masc.checked) {
+
+                res.innerHTML = `<p>Você é um homem com ${anoAtual - nascimento} anos de idade</p>`
+                res.innerHTML += '<img class="fotos" id="idoso" src="images/velho.jpeg" alt="idoso">'
+            } else if (nascimento <= 1980 && fem.checked) {
+
+                res.innerHTML = `<p>Você é uma mulher com ${anoAtual - nascimento} anos de idade</p>`
+                res.innerHTML += '<img class="fotos" id="idosa" src="images/velha.jpeg" alt="idosa">'
+            } else if (nascimento <= 2000 && masc.checked) {
+
+                res.innerHTML = `<p>Você é um homem com ${anoAtual - nascimento} anos de idade</p>`
+                res.innerHTML += '<img class="fotos" id="homem" src="images/homem.jpg" alt="homem">'
+            } else if (nascimento <= 2000 && fem.checked) {
+                
+                res.innerHTML = `<p>Você é uma mulher com ${anoAtual - nascimento} anos de idade</p>`
+                res.innerHTML += '<img class="fotos" src="images/mulher.png" alt="mulher">'
+            } else if (nascimento <= anoAtual && masc.checked) {
+                
+                res.innerHTML = `<p>Você é um garoto com ${anoAtual - nascimento} anos de idade</p>`
+                res.innerHTML += '<img class="fotos" id="menino" src="images/menino.jpeg" alt="garoto">'
+            } else if (nascimento <= anoAtual && fem.checked) {
+
+                res.innerHTML = `Você é uma garota com ${anoAtual - nascimento} anos de idade`
+                res.innerHTML += '<img class="fotos" id="menina" src="images/menina.jpg" alt="garota">'
+            }
+        }
+
+    </script>
+
+</body>
+</html>
