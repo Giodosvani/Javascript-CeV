@@ -12,7 +12,7 @@
     <h1>Verificador de Idade</h1>
 
     <div class="container">
-        <p>Ano de Nascimento: <input type="number" name="txtnum" id="txtnum"></p>
+        <p>Ano de Nascimento: <input type="number" name="txtnum" id="txtnum" placeholder="ex: 1994"></p>
 
         <p>Sexo: 
             <input type="radio" name="radio" id="radmas" checked>
@@ -44,6 +44,7 @@
         function verificar() {
 
             var nascimento = anoNascimento.value
+
             if (nascimento <= 1920 || nascimento >= anoAtual) {
                 alert('[ERRO] Consulte os dados')
                 res.innerHTML = '<p>ERRO FATAL!</p><p>Se você acredita que isso não é um erro, entre em contato com o desenvolvedor'
