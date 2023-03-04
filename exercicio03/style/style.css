@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    height: 96vh;
+}
+
+body {
+    background-color: rgb(239, 193, 107);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+#container {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input {
+    margin: 10px 0px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    font-weight: bold;
+}
